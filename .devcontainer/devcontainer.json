@@ -1,0 +1,26 @@
+{
+    "name": "KIV/UPS Examples",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cmake-tools",
+                "ms-python.python",
+                "ms-dotnettools.csharp",
+                "vscjava.vscode-java-pack"
+            ]
+        }
+    },
+
+    "containerEnv": {
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8"
+    },
+
+    "remoteUser": "dev"
+}

@@ -1,0 +1,30 @@
+<project name="mydemo" default="build" basedir=".">
+
+<target name="build" depends="server,client">
+    <echo message="${basedir}"/>
+</target>
+
+<target name="server" depends="">
+    <echo message="Compiling server"/>
+    <exec executable="javac" dir="${basedir}">
+        <arg value="Server.java"/>
+    </exec>
+</target>
+
+<target name="client" depends="">
+    <echo message="Compiling client"/>
+    <exec executable="javac" dir="${basedir}">
+        <arg value="Client.java"/>
+    </exec>
+</target>
+
+<target name="clean" depends="">
+    <echo message="Deleting binaries..."/>
+    <exec executable="rm" dir="${basedir}">
+    <arg value="-f"/>
+        <arg value="Server.class"/>
+        <arg value="Client.class"/>
+    </exec>
+</target>
+
+</project>
