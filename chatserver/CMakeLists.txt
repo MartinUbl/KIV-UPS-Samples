@@ -1,0 +1,5 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.20)
+
+PROJECT(upschat)
+
+ADD_EXECUTABLE(upschat chatserver.cpp)
