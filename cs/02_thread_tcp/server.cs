@@ -7,7 +7,7 @@ class Server
     static void Main()
     {
         Socket listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-        listener.Bind(new IPEndPoint(IPAddress.Loopback, 10000));
+        listener.Bind(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 10000));
         listener.Listen(10);
         Console.WriteLine("Server listening on localhost:10000");
 
@@ -15,6 +15,7 @@ class Server
         {
             Socket client = listener.Accept();
 
+            // prijaty socket odbavime ve vlastnim vlakne - toto bude moci pokracovat soucasne s dalsimi klienty
             System.Threading.Thread clientThread = new System.Threading.Thread(HandleClient);
             clientThread.Start(client);
         }

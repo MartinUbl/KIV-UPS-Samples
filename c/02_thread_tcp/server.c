@@ -1,3 +1,18 @@
+/*
+ * KIV/UPS - priklady sitoveho programovani
+ *
+ * Zakladni TCP server
+ * Ve vsech prikladech na TCP v teto slozce je fungovani serveru identicke:
+ *   - vytvori socket
+ *   - binduje na 127.0.0.1:10000
+ *   - prijima spojeni
+ *   - prijima znaky a odesila je invertovane (A -> Z, B -> Y, ...)
+ *   - zavre sockety po ukonceni komunikace
+ * 
+ * V teto variante je i paralelni odbaveni klientu:
+ *   Kazdy klient je obslouzen v samostatnem vlakne
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 

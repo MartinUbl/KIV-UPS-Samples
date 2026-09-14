@@ -8,7 +8,7 @@ class Client
     static void Main()
     {
         Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-        client.Connect(IPAddress.Loopback, 10000);
+        client.Connect(IPAddress.Parse("127.0.0.1"), 10000);
         Console.WriteLine("Connected to server on localhost:10000");
 
         using (NetworkStream stream = new NetworkStream(client))

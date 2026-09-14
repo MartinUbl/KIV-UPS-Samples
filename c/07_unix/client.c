@@ -1,3 +1,13 @@
+/*
+ * KIV/UPS - priklady sitoveho programovani
+ *
+ * Zakladni Unix domain socket klient:
+ *   - vytvori socket
+ *   - pripoji se k "serveru"
+ *   - posle 3 pismena a prijme odpovedi od serveru
+ *   - zavre socket
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 

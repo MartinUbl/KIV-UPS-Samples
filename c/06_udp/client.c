@@ -1,3 +1,12 @@
+/*
+ * KIV/UPS - priklady sitoveho programovani
+ *
+ * Zakladni UDP klient:
+ *   - vytvori socket
+ *   - posle 3 pismena a prijme odpovedi od serveru
+ *   - zavre socket
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 

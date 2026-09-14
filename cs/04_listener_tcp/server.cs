@@ -7,13 +7,15 @@ class Server
 {
     static async Task Main()
     {
-        TcpListener listener = new(IPAddress.Loopback, 10000);
+        // TcpListener je vyssi abstrakce nad sockety pro TCP server, analogie socket(), bind() a listen() z C
+        TcpListener listener = new(IPAddress.Parse("127.0.0.1"), 10000);
         listener.Start();
 
         Console.WriteLine("Server listening on localhost:10000");
 
         while (true)
         {
+            // analogie accept() z C, tentokrat v C# svete realizovane pomoci asynchronniho programovani (await/async)
             TcpClient client = await listener.AcceptTcpClientAsync();
             _ = HandleClientAsync(client);
         }

@@ -1,3 +1,21 @@
+/*
+ * KIV/UPS - priklady sitoveho programovani
+ *
+ * Zakladni TCP server
+ * Ve vsech prikladech na TCP v teto slozce je fungovani serveru identicke:
+ *   - vytvori socket
+ *   - binduje na 127.0.0.1:10000
+ *   - prijima spojeni
+ *   - prijima znaky a odesila je invertovane (A -> Z, B -> Y, ...)
+ *   - zavre sockety po ukonceni komunikace
+ * 
+ * V teto variante je i paralelni odbaveni klientu:
+ *   Kazdy klient je obslouzen pomoci epoll(), tj. server muze obsluhovat vice klientu soucasne bez vytvareni novych vlaken
+ *
+ * epoll je modernejsi varianta nez poll(), podporuje vice socketu a je efektivnejsi pri velkem poctu socketu
+ * Rozhrani epoll je navic trochu prijemnejsi na spravu zdroju
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <arpa/inet.h>  // inet_pton, htons, struct sockaddr_in

@@ -1,3 +1,19 @@
+/*
+ * KIV/UPS - priklady sitoveho programovani
+ *
+ * Zakladni UNIX domain socket server
+ * Ve vsech prikladech na UNIX domain socket v teto slozce je fungovani serveru identicke:
+ *   - vytvori socket
+ *   - binduje na /tmp/ups_socket
+ *   - prijima spojeni
+ *   - prijima znaky a odesila je invertovane (A -> Z, B -> Y, ...)
+ *   - zavre sockety po ukonceni komunikace
+ * 
+ * V teto variante NENI paralelni odbaveni klientu
+ * 
+ * Unix domain sockety jsou lokalni a komunikace probiha pouze mezi procesy na stejnem stroji
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 

@@ -7,12 +7,13 @@ public class Server {
             System.out.println("Server listening on localhost:10000");
 
             while (true) {
+                // analogie accept() z C
                 Socket clientSocket = serverSocket.accept();
 
-                // pre-Java 21
+                // vytvoreni vlakna pro obsluhu klienta (pre-Java 21)
                 new Thread(() -> handleClient(clientSocket)).start();
 
-                // Java 21 a novejsi
+                // vytvoreni virtualniho vlakna pro obsluhu klienta (Java 21 a novejsi)
                 //Thread.startVirtualThread(() -> handleClient(clientSocket));
             }
         } catch (IOException e) {

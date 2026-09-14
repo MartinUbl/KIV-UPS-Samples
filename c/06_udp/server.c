@@ -1,3 +1,17 @@
+/*
+ * KIV/UPS - priklady sitoveho programovani
+ *
+ * Zakladni UDP server
+ * Ve vsech prikladech na UDP v teto slozce je fungovani serveru identicke:
+ *   - vytvori socket
+ *   - binduje na 127.0.0.1:10000
+ *   - prijima datagramy
+ *   - prijima znaky a odesila je invertovane (A -> Z, B -> Y, ...)
+ *   - zavre sockety po ukonceni komunikace
+ * 
+ * V teto variante NENI paralelni odbaveni klientu
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 

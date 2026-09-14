@@ -1,3 +1,14 @@
+/*
+ * KIV/UPS - priklady sitoveho programovani
+ *
+ * Zakladni TCP klient
+ * Ve vsech prikladech na TCP v teto slozce je klient identicky:
+ *   - vytvori socket
+ *   - pripoji se k serveru
+ *   - posle 3 pismena a prijme odpovedi od serveru
+ *   - zavre socket
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 

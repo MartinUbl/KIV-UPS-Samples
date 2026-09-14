@@ -8,12 +8,13 @@ class Server
     static async Task Main()
     {
         Socket listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-        listener.Bind(new IPEndPoint(IPAddress.Loopback, 10000));
+        listener.Bind(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 10000));
         listener.Listen(10);
         Console.WriteLine("Server listening on localhost:10000");
 
         while (true)
         {
+            // analogie accept() z C, tentokrat v C# svete realizovane pomoci asynchronniho programovani (await/async)
             Socket client = await listener.AcceptAsync();
             _ = HandleClientAsync(client);
         }

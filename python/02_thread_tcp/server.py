@@ -28,6 +28,7 @@ def main():
 
         while True:
             client, addr = s.accept()
+            # pro odbaveni klienta vytvorime nove vlakno
             threading.Thread(target=handle_client, args=(client,), daemon=True).start()
 
 if __name__ == "__main__":
